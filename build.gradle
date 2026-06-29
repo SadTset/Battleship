@@ -1,5 +1,10 @@
 plugins {
 	id 'java'
+	id 'application'
+}
+
+application {
+	mainClass = 'ch.bbw.m319.battleship.MyPlayer'
 }
 
 group = 'ch.bbw'

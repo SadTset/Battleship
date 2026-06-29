@@ -1,7 +1,6 @@
 package ch.bbw.m319.battleship.api;
 
 import static ch.bbw.m319.battleship.api.BattleshipArena.GameResult.*;
-
 import ch.bbw.m319.battleship.internal.TournamentGrounds;
 
 public final class BattleshipArena {
@@ -17,11 +16,13 @@ public final class BattleshipArena {
 	 * @param secondPlayer der Gegner
 	 * @return {@link GameResult#WIN}, falls der Startspieler gewonnen hat.
 	 */
+	
 	public static GameResult playOnce(BattleshipPlayer startingPlayer, BattleshipPlayer secondPlayer) {
 		var result = new TournamentGrounds(startingPlayer, secondPlayer).playDebugMode();
-		System.out.println("outcome (from starting-players view): " + result);
+		System.out.println(startingPlayer.name() + ": " + result);
 		return result;
 	}
+
 
 	/**
 	 * Turniermodus mit mehreren Hin- und Rückspielen.

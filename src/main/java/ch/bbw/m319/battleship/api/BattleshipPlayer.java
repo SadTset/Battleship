@@ -7,6 +7,8 @@ package ch.bbw.m319.battleship.api;
  */
 public interface BattleshipPlayer {
 
+	String name();
+
 	/**
 	 * Wird am Anfang eines Spiels 1x aufgerufen und legt fest, wo der Gegner das eigene Schiff finden soll.
 	 * Beachte, dass diese Methode bei mehreren Runden (z.B. Hin- und Rückspiel) mehrfach aufgerufen wird.
@@ -55,5 +57,6 @@ public interface BattleshipPlayer {
 	default void gameFinished(ShipPosition opponentShip, boolean youHaveWon) {
 
 	}
+
 
 }

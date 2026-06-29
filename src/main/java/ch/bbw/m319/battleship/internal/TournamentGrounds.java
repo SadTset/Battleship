@@ -86,6 +86,11 @@ public record TournamentGrounds(BattleshipPlayer player1, BattleshipPlayer playe
 
 	private static class PlayerState implements BattleshipPlayer {
 
+		@Override
+		public String name() {
+			return player.name();
+		}
+
 		private static final ThreadFactory deamons = x -> {
 			var t = new Thread(x);
 			t.setDaemon(true);

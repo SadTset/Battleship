@@ -10,8 +10,8 @@ public class TsetPlayer implements BattleshipPlayer{
 	
 private final String name;
 
-	public TsetPlayer() {
-		this.name = "TsetPlayer";
+	public TsetPlayer(String name) {
+		this.name = name;
 	}
 
 	public static void main(String[] args) {

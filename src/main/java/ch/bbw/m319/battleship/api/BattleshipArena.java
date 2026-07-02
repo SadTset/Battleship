@@ -1,6 +1,6 @@
 package ch.bbw.m319.battleship.api;
 
-import static ch.bbw.m319.battleship.api.BattleshipArena.GameResult.*;
+import static ch.bbw.m319.battleship.api.BattleshipArena.GameResult.WIN;
 import ch.bbw.m319.battleship.internal.TournamentGrounds;
 
 public final class BattleshipArena {
@@ -19,7 +19,7 @@ public final class BattleshipArena {
 	
 	public static GameResult playOnce(BattleshipPlayer startingPlayer, BattleshipPlayer secondPlayer) {
 		var result = new TournamentGrounds(startingPlayer, secondPlayer).playDebugMode();
-		System.out.println(startingPlayer.name() + ": " + result);
+		System.out.println("outcome (from starting-players view): " + result);
 		return result;
 	}
 

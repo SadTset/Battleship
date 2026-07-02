@@ -6,11 +6,17 @@ import ch.bbw.m319.battleship.api.ShipPosition;
 import java.util.Random;
 import java.util.ArrayList;
 
-public record MyPlayer(String name) implements BattleshipPlayer {
+public class TsetPlayer implements BattleshipPlayer{
 	
+private final String name;
+
+	public TsetPlayer() {
+		this.name = "TsetPlayer";
+	}
+
 	public static void main(String[] args) {
 		// let it play against itself
-		BattleshipArena.playOnce(new MyPlayer("player1"), new MyPlayer("player2"));
+		BattleshipArena.playOnce(new TsetPlayer("player1"), new TsetPlayer("player2"));
 	}
 
 
@@ -44,14 +50,11 @@ public BattleshipField takeAim() {
 
 @Override 
 public void outcomeOfYourTurn(BattleshipField targetedField, boolean isHit) {
-	print("Your shot at " + targetedField + " did " + (isHit ? "HIT!" : "miss..."));
-	System.out.println();
+	System.out.println("Your shot at " + targetedField + " did " + (isHit ? "HIT!" : "miss..."));
 }
 @Override
 	public void gameFinished(ShipPosition ship, boolean youHaveWon) {
-		if (youHaveWon) {
-			print("WINNER! ");
-		}
+		print(youHaveWon ? "WINNER! " : "LOSER! ");
 	}
 
 }

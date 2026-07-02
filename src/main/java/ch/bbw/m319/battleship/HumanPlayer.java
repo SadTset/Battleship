@@ -19,7 +19,7 @@ public record HumanPlayer(String name) implements BattleshipPlayer {
 	public static void main(String[] args) {
 		System.out.println("Shrink your terminal height, such that there are only 2 lines visible...");
 		System.out.println("Valid coordinates are A1 up to C3.");
-		BattleshipArena.playOnce(new MyPlayer("player1"), new MyPlayer("player2"));
+		BattleshipArena.playOnce(new TsetPlayer("player1"), new TsetPlayer("player2"));
 	}
 
 	private void print(String msg) {
@@ -44,8 +44,7 @@ public record HumanPlayer(String name) implements BattleshipPlayer {
 
 	@Override
 	public void outcomeOfYourTurn(BattleshipField targetedField, boolean isHit) {
-		print("Your shot at " + targetedField + " did " + (isHit ? "HIT!" : "miss..."));
-		System.out.println();
+		System.out.println("Your shot at " + targetedField + " did " + (isHit ? "HIT!" : "miss..."));
 	}
 
 	@Override
